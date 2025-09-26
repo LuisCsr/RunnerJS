@@ -1,0 +1,96 @@
+/* =========================
+   Estilos base y layout
+   ========================= */
+:root{
+  --bg:#0f172a; --accent:#22d3ee; --text:#e5e7eb; --match:#10b98133;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+  background:radial-gradient(1000px 600px at 20% 10%, #172554 0%, var(--bg) 60%);
+  color:var(--text); min-height:100svh; display:grid; place-items:center; padding:24px;
+}
+.app{width:100%; max-width:840px}
+header{display:flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:space-between; margin-bottom:16px}
+h1{margin:0; font-size:clamp(20px,3.5vw,32px)}
+.stats{display:flex; gap:12px; align-items:center; flex-wrap:wrap}
+.pill{background:#1f2937; color:var(--text); padding:8px 12px; border-radius:999px; font-size:14px; border:1px solid #374151}
+.btn{
+  background:linear-gradient(180deg,#06b6d4,#0891b2); color:#fff; border:0; border-radius:12px;
+  padding:10px 14px; font-weight:700; cursor:pointer; box-shadow:0 6px 20px #06b6d466;
+}
+.btn.alt{background:#334155; border:1px solid #475569; box-shadow:none}
+
+/* =========================
+   Cuadrícula del tablero
+   ========================= */
+.grid{
+  display:grid; grid-template-columns:repeat(4,1fr); gap:14px; perspective:1000px;
+}
+@media (max-width:540px){ .grid{ gap:10px } }
+
+/* =========================
+   Carta con efecto flip
+   ========================= */
+.card{
+  position:relative; width:100%; aspect-ratio:3/4;
+  background:transparent; border:0; cursor:pointer; user-select:none;
+}
+.card:focus-visible{ outline:2px solid var(--accent) }
+.card-inner{
+  position:absolute; inset:0; border-radius:16px; overflow:hidden;
+  transform-style:preserve-3d; transition:transform 500ms cubic-bezier(.2,.7,.2,1);
+  box-shadow:0 12px 30px rgba(0,0,0,.35), inset 0 0 0 1px #334155;
+}
+.face{
+  position:absolute; inset:0; display:grid; place-items:center;
+  backface-visibility:hidden; -webkit-backface-visibility:hidden; border-radius:16px;
+  font-size:clamp(28px,6vw,44px);
+}
+.front{ /* cara CON el emoji/imagen: empieza oculta */
+  background:linear-gradient(180deg,#0b1220,#0f172a);
+  border:1px solid #1f2937;
+  transform:rotateY(180deg);
+}
+.front img{
+  width:70%; height:70%; object-fit:contain; display:block;
+}
+.back{ /* cara trasera visible al inicio */
+  background:radial-gradient(200px 160px at 50% 0%, #0ea5e9 0%, #0f172a 60%);
+}
+.back .dot{
+  width:8px; height:8px; border-radius:50%; background:var(--accent);
+  box-shadow:0 0 0 6px #22d3ee22,0 0 0 12px #22d3ee11;
+}
+
+/* Estados */
+.card.flipped .card-inner{ transform:rotateY(180deg) }  /* VOLTEO */
+.card.matched{ outline:2px solid #10b981aa; background:var(--match); filter:saturate(1.1) }
+.card.disabled{ pointer-events:none; opacity:.9 }
+
+/* =========================
+   Modal de victoria
+   ========================= */
+.win{
+  position:fixed; inset:0; display:none; align-items:center; justify-content:center;
+  background:rgba(2,6,23,.6); backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px); padding:20px;
+}
+.win.show{ display:flex }
+.win-card{
+  width:min(520px,96%); background:#0b1220; border:1px solid #1f2937;
+  border-radius:16px; padding:22px; box-shadow:0 20px 60px rgba(0,0,0,.45);
+}
+.win-card h2{ margin:0 0 6px 0; font-size:24px }
+.row{ display:flex; gap:10px; flex-wrap:wrap; align-items:center }
+.row .pill{ background:#0b213a; border-color:#0f2a46 }
+.win-actions{ margin-top:14px; display:flex; gap:10px; justify-content:flex-end }
+.front img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+  display: block;
+  pointer-events: none;
+}
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
