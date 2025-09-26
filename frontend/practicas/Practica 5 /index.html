@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Clima Actual — Geolocalización + OpenWeatherMap</title>
+
+  <!-- Iconos (Font Awesome) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-default">
+  <div class="app">
+    <header class="topbar">
+      <h1>🌦️ Mi Clima Actual</h1>
+      <div class="actions">
+        <button id="use-location" class="btn" type="button">
+          <i class="fa-solid fa-location-crosshairs"></i> Usar mi ubicación
+        </button>
+        <form id="search-form" class="search">
+          <input id="city-input" type="text" placeholder="Ciudad (ej. Madrid)" />
+          <button class="btn alt" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i> Buscar
+          </button>
+        </form>
+      </div>
+    </header>
+
+    <main>
+      <section class="card" aria-live="polite">
+        <div class="card-header">
+          <div class="location">
+            <i class="fa-solid fa-map-pin"></i>
+            <span id="place">—</span>
+          </div>
+          <div id="desc" class="desc">—</div>
+        </div>
+
+        <div class="temp-row">
+          <div class="temp">
+            <span id="icon" class="wx">⛅</span>
+            <span id="temp">--</span><span class="unit">°C</span>
+          </div>
+          <div class="feels">Sensación: <span id="feels">--</span>°C</div>
+        </div>
+
+        <div class="metrics">
+          <div class="metric"><i class="fa-solid fa-droplet"></i> Humedad: <span id="humidity">--</span>%</div>
+          <div class="metric"><i class="fa-solid fa-wind"></i> Viento: <span id="wind">--</span> km/h</div>
+        </div>
+
+        <div id="error" class="error" role="alert" hidden></div>
+      </section>
+    </main>
+  </div>
+
+  <div id="loading" class="loading" aria-hidden="true">
+    <div class="spinner"></div>
+    <p>Cargando clima…</p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

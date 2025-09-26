@@ -1,0 +1,122 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 350px;
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 4px solid #667eea;
+    transition: transform 0.3s ease;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+}
+
+h1 {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.title {
+    color: #667eea;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.description {
+    color: #666;
+    font-size: 0.95em;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+.button {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 25px;
+    margin: 10px 5px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+/* Agregar estas reglas al final de tu archivo style3.css */
+
+/* Ocultar la información de contacto por defecto */
+.contact-info {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+/* Mostrar la información de contacto cuando tenga la clase 'show' */
+.contact-info.show {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Estilo para los elementos individuales de contacto */
+.contact-item {
+    margin: 10px 0;
+    padding: 8px;
+    text-align: left;
+    color: #333;
+    font-size: 0.9em;
+}
+
+.contact-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Animación suave para cuando aparece */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CALMA · App de Meditación</title>
+  <meta name="description" content="Landing page semántica para una app ficticia de meditación con formulario validado y animaciones." />
+
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Usamos system-ui y fallback para minimizar dependencias externas -->
+  <link rel="stylesheet" href="style7.css" />
+  <script defer src="script4.js"></script>
+</head>
+<body>
+  <!-- Header semántico con navegación accesible -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#hero" aria-label="Ir al inicio">
+        <!-- Logotipo simple como SVG accesible -->
+        <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" focusable="false">
+          <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.15"></circle>
+          <path d="M12 5c3.866 0 7 2.239 7 5s-3.134 5-7 5-7-2.239-7-5 3.134-5 7-5Z" fill="currentColor"></path>
+        </svg>
+        <span>CALMA</span>
+      </a>
+
+      <!-- Botón hamburguesa para móvil -->
+      <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Abrir menú">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+
+      <nav id="primary-nav" class="primary-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="#features">Características</a></li>
+          <li><a href="#planes">Planes</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Sección HERO semántica -->
+    <section id="hero" class="hero" aria-labelledby="hero-title">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1 id="hero-title" class="fade-in-up">Respira. Enfoca. <span class="accent">Calma.</span></h1>
+          <p class="lead fade-in-up delay-1">
+            Una app de meditación guiada para crear hábitos de bienestar en 10 minutos al día.
+          </p>
+          <div class="cta-group fade-in-up delay-2">
+            <a class="btn btn-primary" href="#contacto" id="ctaSubscribe">Suscríbete</a>
+            <a class="btn btn-ghost" href="#features">Ver más</a>
+          </div>
+          <p class="fineprint fade-in-up delay-3">Sin spam. Cancela cuando quieras.</p>
+        </div>
+
+        <figure class="hero-visual fade-in-up delay-1">
+          <img src="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' width='560' height='360' viewBox='0 0 560 360'><defs><linearGradient id='g' x1='0' x2='1' y1='0' y2='1'><stop stop-color='%23a7f3d0' offset='0%'/><stop stop-color='%23bfdbfe' offset='100%'/></linearGradient></defs><rect width='560' height='360' rx='24' fill='url(%23g)'/><g fill='%230f172a' opacity='0.8'><circle cx='120' cy='180' r='32'/><circle cx='280' cy='180' r='32'/><circle cx='440' cy='180' r='32'/></g><text x='50%' y='300' text-anchor='middle' fill='%230f172a' font-family='system-ui, -apple-system, Segoe UI, Roboto' font-size='20'>Ilustración simple (SVG inline)</text></svg>" alt="Previsualización de la app con círculos relajantes" width="560" height="360" />
+          <figcaption>Ilustración SVG ligera sin dependencias.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Sección de características con <section> y <article> -->
+    <section id="features" class="section" aria-labelledby="features-title">
+      <div class="container">
+        <header class="section-header">
+          <h2 id="features-title">Características</h2>
+          <p>Construida para acompañarte: simple, bella y efectiva.</p>
+        </header>
+
+        <div class="features-grid">
+          <article class="card">
+            <h3>Rutinas guiadas</h3>
+            <p>Sesiones de 5–20 min con audio e historias que te ayudan a crear hábitos.</p>
+          </article>
+
+        <article class="card">
+            <h3>Respiración consciente</h3>
+            <p>Ejercicios visuales y temporizador para enfocarte en tu respiración.</p>
+          </article>
+
+          <article class="card">
+            <h3>Progreso y streak</h3>
+            <p>Rachas, recordatorios suaves y estadísticas semanales.</p>
+          </article>
+
+          <article class="card">
+            <h3>Modo sin distracciones</h3>
+            <p>Interfaz minimalista y audio sin interrupciones.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de planes (grid) -->
+    <section id="planes" class="section" aria-labelledby="planes-title">
+      <div class="container">
+        <header class="section-header">
+          <h2 id="planes-title">Planes</h2>
+          <p>Empieza gratis y cambia cuando estés listo.</p>
+        </header>
+
+        <div class="pricing-grid">
+          <article class="card price">
+            <h3>Básico</h3>
+            <p class="price-tag">Gratis</p>
+            <ul>
+              <li>5 meditaciones</li>
+              <li>Ejercicios de respiración</li>
+              <li>Seguimiento de hábito</li>
+            </ul>
+            <a href="#contacto" class="btn btn-outline">Probar</a>
+          </article>
+
+          <article class="card price featured" aria-label="Plan recomendado">
+            <div class="badge" aria-hidden="true">Popular</div>
+            <h3>Plus</h3>
+            <p class="price-tag">$4.99 / mes</p>
+            <ul>
+              <li>Todo lo del Básico</li>
+              <li>+ 50 meditaciones guiadas</li>
+              <li>Sonidos de enfoque</li>
+            </ul>
+            <a href="#contacto" class="btn btn-primary">Elegir</a>
+          </article>
+
+          <article class="card price">
+            <h3>Pro</h3>
+            <p class="price-tag">$9.99 / mes</p>
+            <ul>
+              <li>Todo lo de Plus</li>
+              <li>Meditaciones personalizadas</li>
+              <li>Descarga offline</li>
+            </ul>
+            <a href="#contacto" class="btn btn-outline">Empezar</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de contacto con formulario validado -->
+    <section id="contacto" class="section" aria-labelledby="contacto-title">
+      <div class="container">
+        <header class="section-header">
+          <h2 id="contacto-title">Contacto</h2>
+          <p>¿Tienes dudas? Escríbenos y te responderemos pronto.</p>
+        </header>
+
+        <article aria-label="Formulario de contacto">
+          <form id="contactForm" novalidate>
+            <fieldset>
+              <legend>Envíanos un mensaje</legend>
+
+              <!-- Campo: Nombre -->
+              <div class="form-control">
+                <label for="nombre">Nombre</label>
+                <input id="nombre" name="nombre" type="text" autocomplete="name" placeholder="Tu nombre" aria-describedby="nombreError" aria-invalid="false" />
+                <small id="nombreError" class="error" aria-live="polite"></small>
+              </div>
+
+              <!-- Campo: Email -->
+              <div class="form-control">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" placeholder="tucorreo@ejemplo.com" aria-describedby="emailError" aria-invalid="false" />
+                <small id="emailError" class="error" aria-live="polite"></small>
+              </div>
+
+              <!-- Campo: Mensaje -->
+              <div class="form-control">
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" rows="6" placeholder="¿En qué podemos ayudarte?" aria-describedby="mensajeError" aria-invalid="false"></textarea>
+                <small id="mensajeError" class="error" aria-live="polite"></small>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary" id="btnEnviar">Enviar</button>
+                <p class="fineprint">Validación en tiempo real. No se envían datos reales.</p>
+              </div>
+            </fieldset>
+          </form>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer semántico -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> CALMA — Hecho con ♥ para fines educativos.</p>
+      <nav aria-label="Footer">
+        <ul class="footer-links">
+          <li><a href="#hero">Inicio</a></li>
+          <li><a href="#features">Características</a></li>
+          <li><a href="#planes">Planes</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Modal accesible que aparece al enviar correctamente -->
+  <div class="modal-overlay" id="modalOverlay" hidden></div>
+  <div class="modal" id="successModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc" hidden>
+    <div class="modal-content" role="document">
+      <h2 id="modalTitle">¡Gracias por tu mensaje! 🎉</h2>
+      <p id="modalDesc">Hemos recibido tu información. Te contactaremos muy pronto.</p>
+      <button class="btn btn-primary" id="closeModal">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- Contenedor para confeti (los elementos se crean dinámicamente con JS) -->
+  <div id="confetti-root" aria-hidden="true"></div>
+</body>
+</html>
