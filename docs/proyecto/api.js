@@ -1,4 +1,5 @@
 import { fetchTopScores, submitScore } from './api.js';
+export const API_BASE = 'https://runnerjs-api.onrender.com';
 
 // ---- DOM -------------------------------------------------------
 const canvas = document.getElementById('game');
